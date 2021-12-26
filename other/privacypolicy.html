@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WxFixBoot's Privacy Policy</title>
+    </head>
+    <body>
+        I respect your privacy.
+        <br>
+        <p>
+        Hence, WxFixBoot collects only information it requires to run, or is of significant importance to the user, and it won't report any information it collects, to anybody. WxFixBoot does also not collect any personal, or personally identifiable information.
+        </p>
+        <p><u>It has never done, and it never will.</u></p>
+
+        <h2><center>Disk Information</center></h2>
+
+        <p>
+        The disk information is captured using the getdevinfo module as of WxFixBoot version 3.0.0 and onwards. The details about what information is gathered are documented here: <a href="https://www.hamishmb.com/html/Docs/getdevinfo.php" target="_blank">https://www.hamishmb.com/html/Docs/getdevinfo.php</a>. All of this information is needed for WxFixBoot to run, with a few exceptions for the following, which are only useful for the user:
+
+        <ul>
+            <li>The Disk's Vendor (if any).</li>
+            <li>The Disk's Product (if any).</li>
+            <li>The Disk's Capacity (if any).</li>
+            <li>The Disk's Description (if any).</li>
+        </ul>
+
+        <h2><center>Operating System Information</center></h2>
+
+        <p>
+        A smaller amount of information needs to be collected on each Linux Operating System installed on your machine as well. This is as follows:
+        </p>
+
+        <ul>
+            <li>Operating System name and version (e.g. Ubuntu 16.04, or Windows 8.1). This is used to identify each OS to the user and the WxFixBoot itself.</li>
+            <li>Whether this Operating System is currently running. This is used to determine how to modify this OS’s bootloader, if the user asks to do so.</li>
+            <li>Operating System Architecture (e.g. i386, or x86_64). This is used to determine if this OS’s bootloader can be modified later.</li>
+            <li>The partition the Operating System resides on. This is needed to be able to modify the OS’s bootloader if asked to by the user.</li>
+            <li>The Operating System’s package manager (either apt-get, or dnf). As above.</li>
+            <li>Information from each Operating System’s /etc/fstab file, allowing WxFixBoot to:</li>
+            <li>Determine this OS’s EFI partition, if any (where EFI bootloaders reside and are installed to).</li>
+            <li>Determine this OS’s Boot partition, if any (where the OS’s Linux kernel and initrd are stored, if not on the root partition).</li>
+        </ul>
+
+        <p>
+        NOTE: Not all of this information is available or applicable for Windows and macOS, so there will be a much more limited amount of information visibile in the System Information Window for those operating systems.
+        </p>
+
+        <h2><center>Firmware Information</center></h2>
+
+        <p>
+        Your firmware type needs to be determined to check which bootloaders can be installed. For example, if you have EFI firmware, you (usually) need an EFI bootloader to start your Operating System, and installing a BIOS bootloader will not work, and vice versa. To collect this information, WxFixBoot will:
+        </p>
+
+        <ul>
+            <li>Check to see if the EFI variables are present. If they are, then you have EFI firmware.</li>
+            <li>If not, run “dmidecode -q -t BIOS” to get firmware information.</li>
+        </ul>
+
+        <h2><center>Bootloader Information</center></h2>
+
+        <p>
+        WxFixBoot also needs to gather information about the bootloaders on your system. This information is gathered for each OS, and is as follows:
+        </p>
+
+        <ul>
+            <li>The currently installed bootloader (e.g. ELILO, or GRUB2).</li>
+            <li>Any bootloaders that are available for installation. This is used to present the user with a list of alternative bootloaders to install.</li>
+            <li>The disk the bootloader is installed to. If we modify this bootloader, make sure it stays installed in the same place.</li>
+            <li>Whether this bootloader can be modified.</li>
+        </ul>
+
+        <p>
+        Further information is gathered for your convenience, and allows the program to operate more smoothly, but is not absolutely necessary. The following is gathered for all supported bootloaders:
+        </p>
+
+        <ul>
+            <li>The bootloader’s timeout, if any. This allows WxFixBoot to keep it set the way it is when modifying the bootloader, and allows the user to change it as necessary.</li>
+            <li>The bootloader’s global kernel options, if any. As above.</li>
+            <li>The bootloader’s default OS, if any. As above.</li>
+            <li>All of the bootloader's menu entries. This is used to set and get the bootloader's default OS and match them to the OSs WxFixBoot detected.</li>
+        </ul>
+
+        <h2><center>Other Information</center></h2>
+
+        <p>
+        A basic dependency check is done to ensure that WxFixBoot can function on this system.<br><br>
+
+        A small amount of other information is collected in order for WxFixBoot to operate correctly:
+        </p>
+
+        <ul>
+            <li>Whether the system is running on a live disk or not (this needs to be considered when gathering operating system information).</li>
+            <li>If so, whether this live disk is Parted Magic, which needs to be handled differently compared to running on Ubuntu or Fedora.</li>
+        </ul>
+
+        <p>
+        Finally, WxFixBoot outputs its version and that of python and wxpython into the log file on startup to aid debugging if the log file is later needed to resolve a problem, for example in a support request from a user.
+        </p>
+
+        <h2><center>Summary</center></h2>
+
+        <p>
+        The only collected information that cannot be viewed in the GUI are:
+        </p>
+
+        <ul>
+            <li>The firmware type.</li>
+            <li>Whether WxFixBoot detected it was running on a live disk or not.</li>
+            <li>Whether WxFixBoot detected it was running on Parted Magic or not.</li>
+            <li>Information specific to LVM disks - such as the volume group.</li>
+            <li>The contents of /etc/fstab contents, and the boot record.</li>
+        </ul>
+
+        <p>
+        This information is not visible because it would be confusing to the user, and is difficult to display in any meaningful way. If you wish to see it, instead save the log file when you exit WxFixBoot and look inside that.
+        </p>
+
+        <p>
+        All the remaining information that is collected by WxFixBoot is accessible in the System Information Window. This window can be found in the View menu from the Main Window, or by clicking the “View More Details” button in the Bootloader Options Window.
+        </p>
+
+        <p>
+        For debugging reasons, all of this information is temporarily saved in a log file (/tmp/wxfixboot.log). It does <strong><u>NOT</u></strong> include any personal, or personally identifiable information such as serial numbers or IP addresses.
+        </p>
+
+        <p>
+        When WxFixBoot is closed, all of this information (including the logfile itself) is deleted, unless you decide to save it somewhere else when prompted. In the event of an emergency exit, you may be asked to save the log file so you can use it in a support request. 
+        </p>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=WxFixBoot
+GenericName=Utility to assist with fixing the bootloader on a computer quickly.
+Comment=Restore the linux bootloader on any computer with ease.
+Exec=/usr/share/wxfixboot/WxFixBoot.py
+Icon=wxfixboot
+Terminal=false
+Type=Application
+Categories=System;
+StartupNotify=true

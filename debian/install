@@ -1,0 +1,10 @@
+WxFixBoot.py usr/share/wxfixboot/
+docs usr/share/wxfixboot/
+images usr/share/wxfixboot/
+Tools usr/share/wxfixboot/
+Tests usr/share/wxfixboot/
+other usr/share/wxfixboot/
+tests.py usr/share/wxfixboot/
+LICENSE usr/share/wxfixboot/
+wxfixboot.png usr/share/pixmaps/
+debian/org.kaisen.wxfixboot.policy usr/share/polkit-1/actions/

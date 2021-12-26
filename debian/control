@@ -1,0 +1,36 @@
+Source: wxfixboot
+Section: utils
+Priority: optional
+Maintainer: Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>
+Build-Depends: debhelper (>= 13),
+	       cdbs (>= 0.2),
+	       dh-python,
+Standards-Version: 4.6.0
+Homepage: https://www.hamishmb.com/index.php
+Vcs-Browser: https://gitlab.com/kaisenlinux/packages/wxfixboot
+Vcs-Git: https://gitlab.com/kaisenlinux/packages/wxfixboot.git
+
+Package: wxfixboot
+Architecture: all
+Depends: ${misc:Depends},
+	 ${python3:Depends},
+	 python3,
+	 python3-wxgtk4.0,
+	 coreutils,
+	 libnotify-bin,
+	 policykit-1,
+	 util-linux,
+	 kmod,
+	 mount,
+	 iputils-ping,
+	 e2fsprogs,
+	 file,
+	 dash,
+	 lshw,
+	 lvm2,
+	 dmidecode,
+	 binutils,
+	 dmsetup,
+	 libgtk3-perl,
+	 python3-getdevinfo,
+Description: Utility to assist with fixing the bootloader on a computer quickly

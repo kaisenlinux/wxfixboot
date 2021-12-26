@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+ln -sf /usr/share/wxfixboot/WxFixBoot.py /usr/sbin/wxfixboot
