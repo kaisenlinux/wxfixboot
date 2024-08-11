@@ -1,3 +1,9 @@
+wxfixboot (3.1.0-2kaisen) kaisen-packages; urgency=medium
+
+  * Replace policykit-1 by polkitd
+
+ -- Kevin Chevreuil - Kaisen <kaisen@kaisenlinux.org>  Sun, 11 Aug 2024 15:18:48 +0200
+
 wxfixboot (3.1.0-1kaisen) kaisen-packages; urgency=medium
 
   * First packaging for Kaisen Linux
